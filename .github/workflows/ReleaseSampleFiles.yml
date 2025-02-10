@@ -1,12 +1,12 @@
-on: [push]
-permissions:
-  contents: write
+on:
+  push:
+    branches:
+      - master
 name: Release Sample Files
 
 jobs:
   build:
     name: Create Release
-    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
